@@ -6,7 +6,13 @@
 
   app.listen(3000);
   
-
+app.get("/",(req,res)=>{
+  res.json({
+    "Message":"Api started Successfully!! > Try Different EndPoints by changing url",
+    "Retrive Textfiles endpoint":"/getalltextfiles",
+    "To Create Newfile endpoint- try in postman":"/createnewfile"
+  })
+})
   app.get("/getalltextfiles", (req, res) => {
     fs.readdir("./files", (err, data) => {
       if (err) {
